@@ -1,0 +1,28 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: spider-school
+server:
+  port: 8040
+
+---
+spring:
+  profiles: dev
+  application:
+    name: spider-school-dev
+redis:
+  host: 127.0.0.1
+  port: 6379
+  database: 0
+  password:
+  lettuce:
+    pool:
+      max-active: -1  #负数为不限制最大连接数
+      max-wait: -1  #最大阻塞时间
+      max-idle: 20  #最大空闲连接
+      min-idle: 1
+  timeout: 5000
+logging:
+  file: mylog.log
+  path: D:/study
